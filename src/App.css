@@ -1,38 +1,163 @@
-.App {
+.app {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 480px;
+  height: 100vh;
+}
+
+.app__content {
+  margin-top: 5%;
+  width: 100%;
+  max-width: 1280px;
+  min-width: 460px;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.books-list {
+  border: 1px solid #999;
+}
+
+.books-list__header {
+  position: sticky;
+  top: 0;
+}
+
+.header {
+  background: #fff;
+}
+
+.header__navigation {
+  display: flex;
+}
+
+.header__navigation-link {
+  padding: 12px 10px;
+  width: 33.3333%;
+  border-bottom: 1px solid #999;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+}
+
+.header__navigation-link:hover {
+  font-weight: 700;
+}
+
+.header__navigation-link + .header__navigation-link {
+  border-left: 1px solid #999;
+}
+
+.header__navigation-link--active {
+  border-bottom-color: transparent;
+  font-weight: 700;
+  cursor: default;
+}
+
+.book-card__title-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.books__zero-state {
+  padding: 36px 16px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.book-card {
+  padding: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.book-card + .book-card {
+  border-top: 1px solid #999;
+}
+
+.book-card__title {
+  margin: 0;
+}
+
+.book-card__change-state {
+  margin-left: 8px;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.book-card__change-state-text {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .book-card__change-state:hover .book-card__change-state-text {
+    text-decoration: none;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.book-card__change-state::after {
+  content: attr(data-icon);
 }
 
-.App-link {
-  color: #61dafb;
+.book-card__tags-list {
+  margin-bottom: 0;
+  margin-top: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.tags-list {
+  display: inline-flex;
+  padding-left: 4px;
+}
+
+.tags-list__item + .tags-list__item {
+  margin-left: 8px;
+}
+
+.filter-tag {
+  padding: 4px;
+  font-size: inherit;
+  font-family: inherit;
+  background: #ddd;
+  border: none;
+  box-shadow: none;
+}
+
+button.filter-tag {
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button.filter-tag:hover {
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.filter-box {
+  padding: 24px 16px;
+  border-bottom: 1px solid #999999;
+}
+
+.filter-box__clear-btn {
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.filter-box__clear-btn-text {
+  text-decoration: underline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .filter-box__clear-btn:hover .filter-box__clear-btn-text {
+    text-decoration: none;
   }
 }
