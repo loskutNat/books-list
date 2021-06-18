@@ -7,11 +7,9 @@
 }
 
 .app__content {
-  margin-top: 5%;
   width: 100%;
   max-width: 1280px;
   min-width: 460px;
-  max-height: 90%;
   overflow-y: auto;
 }
 

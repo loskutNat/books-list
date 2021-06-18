@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom';
+
 const BOOK_STAGES = {
   IN_PROGRESS: 'inprogress',
   FINISHED: 'finished',
@@ -11,7 +13,7 @@ function tagModifyFromQuery(tag) {
   return tag.replace(/_/g, ' ');
 }
 
-function useQuery(useLocation) {
+function useQuery() {
   return new URLSearchParams(useLocation().search);
 }
 

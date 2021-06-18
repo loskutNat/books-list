@@ -1,5 +1,5 @@
 import React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   useQuery,
   tagModifyForQuery,
@@ -22,7 +22,7 @@ let booksFinished = ls.getItem(BOOK_STAGES.FINISHED)
 
 function BookList({ customClass }) {
   const [books, setBooks] = useState([]);
-  const query = useQuery(useLocation);
+  const query = useQuery();
   const history = useHistory();
   const filterTags = query.get('tags') ? query.get('tags').split(',') : [];
   const filterTagsModifiedFromQuery = filterTags.map((filterTag) =>
