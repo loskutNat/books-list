@@ -35,7 +35,7 @@ function BookList({ customClass }) {
 
   const fetchBooks = async () => {
     const res = await fetch(
-      'https://raw.githubusercontent.com/lastw/test-task/master/data/10-items.json'
+      'https://raw.githubusercontent.com/loskutNat/books-list/master/data/data.json'
     );
     const data = await res.json();
     return data.items;
